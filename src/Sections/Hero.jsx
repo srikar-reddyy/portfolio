@@ -33,7 +33,7 @@ function Hero() {
         {/* Resume Button */}
         <div className="mt-8 flex justify-center sm:justify-start">
   <a
-    href="/assets/Srikar_Resume.pdf"
+    href="https://drive.google.com/file/d/15q7_jUjhLWbY_GHX3NAF2Gx1whTkk4ar/view?usp=sharing"
     target="_blank"
     rel="noopener noreferrer"
     className="relative inline-block px-6 py-3 rounded-xl font-semibold text-white bg-black border-2 border-cyan-400
