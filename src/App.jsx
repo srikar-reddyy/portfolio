@@ -4,6 +4,7 @@ import Hero from './Sections/Hero';
 import './index.css';
 import About from './Components/About';
 import Education from './Components/Education';
+import Experience from './Components/Experience';
 import Projects from './Components/Projects';
 import Contact from './Components/Contact';
 
@@ -19,6 +20,10 @@ function App() {
 
         <section id="skills" className="pt-0">
           <About />
+        </section>
+
+        <section className="pt-0">
+          <Experience />
         </section>
 
         <section id="projects" className="pt-0">

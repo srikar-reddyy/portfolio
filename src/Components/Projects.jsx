@@ -1,6 +1,7 @@
 import React from 'react';
 import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 import { styles } from '../styles';
 import { github } from '../assets';
@@ -8,7 +9,7 @@ import { SectionWrapper } from '../hoc';
 import { projects } from '../constants';
 import { fadeIn, textVariant } from '../Utils/motion';
 
-const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
+const ProjectCard = ({ index, name, description, tags, image, source_code_link, live_link }) => {
   return (
     <motion.div variants={fadeIn('up', 'spring', index * 0.5, 0.75)}>
       <Tilt
@@ -24,17 +25,29 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
             alt={name}
             className="w-full h-full object-cover rounded-2xl"
           />
-          <div className="absolute inset-0 flex justify-end m-2 card-img_hover">
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-8 h-8 rounded-full flex justify-center items-center cursor-pointer"
-            >
-              <img
-                src={github}
-                alt="github"
-                className="w-1/2 h-1/2 object-contain"
-              />
-            </div>
+          <div className="absolute inset-0 flex justify-end gap-2 m-2 card-img_hover">
+            {live_link && (
+              <a
+                href={live_link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${name} live site`}
+                className="black-gradient w-8 h-8 rounded-full flex justify-center items-center text-white"
+              >
+                <FaExternalLinkAlt className="w-3.5 h-3.5" />
+              </a>
+            )}
+            {source_code_link && (
+              <a
+                href={source_code_link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${name} source code`}
+                className="black-gradient w-8 h-8 rounded-full flex justify-center items-center"
+              >
+                <img src={github} alt="github" className="w-1/2 h-1/2 object-contain" />
+              </a>
+            )}
           </div>
         </div>
 
@@ -65,7 +78,7 @@ const Projects = () => {
 
       <div className="w-full flex justify-center">
         <p className="mt-3 text-secondary text-[16px] max-w-2xl leading-[28px] text-center">
-          Here are some of the projects I've worked on, demonstrating my skills in development, design, and problem-solving.
+          From production platforms to RAG pipelines and computer vision, here are some of the systems I've designed and built.
         </p>
       </div>
 

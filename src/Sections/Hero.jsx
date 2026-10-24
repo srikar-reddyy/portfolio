@@ -1,5 +1,12 @@
 import React from 'react';
 import { Typewriter } from 'react-simple-typewriter';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+
+const socials = [
+  { icon: FaGithub, label: 'GitHub', href: 'https://github.com/srikar-reddyy' },
+  { icon: FaLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/srikar-reddy-81577b263/' },
+  { icon: FaEnvelope, label: 'Email', href: 'mailto:srikarsrikar303@gmail.com' },
+];
 
 function Hero() {
   return (
@@ -15,7 +22,7 @@ function Hero() {
           I am{' '}
           <span style={{ color: '#00FFFF', fontWeight: 'bold' }}>
             <Typewriter
-              words={['a UI/UX Designer', 'a Product Manager', 'a Web Developer', 'a Tech Enthusiast']}
+              words={['a Backend Engineer', 'an AI Engineer', 'a Full Stack Developer', 'a RAG Pipeline Builder']}
               loop={true}
               cursor
               cursorStyle="|"
@@ -27,13 +34,13 @@ function Hero() {
         </h2>
 
         <p className="text-lg sm:text-xl text-neutral-400 mt-4">
-          UI/UX Designer | Full Stack Developer | Data Structures & Algorithms Enthusiast 📊💻 | Building seamless and responsive digital experiences 🌐✨ | Passionate about solving problems through clean code and innovative solutions 💡🚀
+          Backend & AI Engineer based in Hyderabad, India 📍 I build scalable full-stack applications, production RAG pipelines, and intelligent AI-powered systems. Full Stack Engineer at StaySync, serving 2,400+ active users with 99.9% uptime 🚀
         </p>
 
         {/* Resume Button */}
-        <div className="mt-8 flex justify-center sm:justify-start">
+        <div className="mt-8 flex flex-wrap items-center gap-5 justify-center sm:justify-start">
   <a
-    href="https://drive.google.com/file/d/15q7_jUjhLWbY_GHX3NAF2Gx1whTkk4ar/view?usp=sharing"
+    href="https://drive.google.com/file/d/1q1pOFgrvK8iflwMWjGlFZzf38fuvRPlD/view?usp=drivesdk"
     target="_blank"
     rel="noopener noreferrer"
     className="relative inline-block px-6 py-3 rounded-xl font-semibold text-white bg-black border-2 border-cyan-400
@@ -44,6 +51,18 @@ function Hero() {
     {/* Glow layer */}
     <span className="absolute inset-0 rounded-xl bg-cyan-400 opacity-20 blur-xl group-hover:opacity-40 transition-all duration-500" />
   </a>
+  {socials.map(({ icon: Icon, label, href }) => (
+    <a
+      key={label}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      className="text-neutral-300 hover:text-cyan-400 transition-colors text-2xl"
+    >
+      <Icon />
+    </a>
+  ))}
 </div>
 
       </div>
@@ -51,9 +70,9 @@ function Hero() {
       {/* Right Image + Animation */}
       <div className="relative flex justify-center items-center">
         <img
-          src="/assets/srikarphoto.jpg"
+          src="/assets/srikar-headshot.jpg"
           alt="Srikar Avatar"
-          className="w-48 h-48 sm:w-80 sm:h-80 object-cover rounded-full border-4 border-cyan-400
+          className="shrink-0 w-48 h-48 sm:w-80 sm:h-80 object-cover object-center bg-white rounded-full border-4 border-cyan-400
              shadow-[0_0_40px_#00ffff33,0_20px_40px_#00ffff22]
              transition-all duration-500 ease-in-out
              hover:shadow-[0_0_10px_#00ffff44,0_30px_60px_#00ffff33]

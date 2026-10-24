@@ -1,8 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaReact, FaNodeJs, FaFigma, FaGitAlt, FaHtml5, FaCss3Alt, FaPython, FaCode } from 'react-icons/fa';
-import { DiJavascript } from 'react-icons/di';
-import { SiTailwindcss } from 'react-icons/si';
+import { FaAws, FaHorse, FaBasketballBall, FaUsers } from 'react-icons/fa';
+import {
+  SiTypescript, SiJavascript, SiPython, SiCplusplus, SiNodedotjs, SiExpress, SiFastapi,
+  SiReact, SiNextdotjs, SiTailwindcss, SiFigma, SiMongodb, SiPostgresql, SiRedis, SiDocker,
+  SiLangchain, SiOpenai, SiPytorch, SiHuggingface, SiOpencv, SiGit, SiGithubcopilot, SiClaude,
+  SiVercel, SiPostman, SiLinux,
+} from 'react-icons/si';
 import './highlight.css';
 import { styles } from '../styles';
 
@@ -25,31 +29,70 @@ const cardVariant = {
 function About() {
   const cards = [
     {
-      title: 'Tech Stack',
+      title: 'Languages',
       icons: [
-        { icon: FaReact, label: 'React', color: 'text-cyan-400' },
-        { icon: FaNodeJs, label: 'Node.js', color: 'text-green-500' },
-        { icon: FaFigma, label: 'Figma', color: 'text-pink-500' },
-        { icon: FaGitAlt, label: 'Git', color: 'text-orange-500' },
-        { icon: FaHtml5, label: 'HTML5', color: 'text-red-500' },
-        { icon: FaCss3Alt, label: 'CSS3', color: 'text-blue-500' },
+        { icon: SiTypescript, label: 'TypeScript', color: 'text-blue-500' },
+        { icon: SiJavascript, label: 'JavaScript', color: 'text-yellow-400' },
+        { icon: SiPython, label: 'Python', color: 'text-yellow-500' },
+        { icon: SiCplusplus, label: 'C++', color: 'text-blue-400' },
       ],
     },
     {
-      title: 'Programming Languages',
+      title: 'Backend',
       icons: [
-        { icon: FaPython, label: 'Python', color: 'text-yellow-500' },
-        { icon: DiJavascript, label: 'JavaScript', color: 'text-yellow-400' },
-        { icon: FaCode, label: 'C++', color: 'text-blue-500' },
-        { icon: FaHtml5, label: 'HTML', color: 'text-red-500' },
-        { icon: FaCss3Alt, label: 'CSS', color: 'text-blue-500' },
-        { icon: SiTailwindcss, label: 'Tailwind', color: 'text-cyan-400' },
+        { icon: SiNodedotjs, label: 'Node.js', color: 'text-green-500' },
+        { icon: SiExpress, label: 'Express', color: 'text-neutral-200' },
+        { icon: SiFastapi, label: 'FastAPI', color: 'text-teal-400' },
+        { icon: SiPostman, label: 'REST APIs', color: 'text-orange-500' },
       ],
     },
-    { title: 'UI/UX Designing', icons: [] },
-    { title: 'Tools', icons: [] },
-    { title: 'Design', icons: [] },
-    { title: 'Other Skills', icons: [] },
+    {
+      title: 'Frontend & Design',
+      icons: [
+        { icon: SiReact, label: 'React', color: 'text-cyan-400' },
+        { icon: SiNextdotjs, label: 'Next.js', color: 'text-white' },
+        { icon: SiTailwindcss, label: 'Tailwind', color: 'text-cyan-400' },
+        { icon: SiFigma, label: 'Figma', color: 'text-pink-500' },
+      ],
+    },
+    {
+      title: 'Databases & Infrastructure',
+      icons: [
+        { icon: SiMongodb, label: 'MongoDB', color: 'text-green-500' },
+        { icon: SiPostgresql, label: 'PostgreSQL', color: 'text-blue-400' },
+        { icon: SiRedis, label: 'Redis', color: 'text-red-500' },
+        { icon: FaAws, label: 'AWS', color: 'text-orange-400' },
+        { icon: SiDocker, label: 'Docker', color: 'text-blue-500' },
+        { icon: SiVercel, label: 'Vercel', color: 'text-white' },
+      ],
+    },
+    {
+      title: 'AI & Machine Learning',
+      icons: [
+        { icon: SiLangchain, label: 'LangChain', color: 'text-emerald-400' },
+        { icon: SiOpenai, label: 'OpenAI', color: 'text-white' },
+        { icon: SiPytorch, label: 'PyTorch', color: 'text-orange-500' },
+        { icon: SiHuggingface, label: 'Hugging Face', color: 'text-yellow-400' },
+        { icon: SiOpencv, label: 'OpenCV', color: 'text-green-400' },
+      ],
+    },
+    {
+      title: 'Tools & Workflow',
+      icons: [
+        { icon: SiGit, label: 'Git', color: 'text-orange-500' },
+        { icon: SiClaude, label: 'Claude', color: 'text-orange-300' },
+        { icon: SiGithubcopilot, label: 'Copilot', color: 'text-white' },
+        { icon: SiLinux, label: 'Linux', color: 'text-yellow-300' },
+      ],
+    },
+    {
+      title: 'Beyond the Code',
+      icons: [
+        { icon: FaHorse, label: 'Horse Riding', color: 'text-amber-400' },
+        { icon: FaBasketballBall, label: 'Basketball', color: 'text-orange-500' },
+        { icon: FaUsers, label: 'Startup Mentoring', color: 'text-cyan-400' },
+      ],
+    },
   ];
 
   return (
@@ -78,7 +121,7 @@ function About() {
         {cards.map((card, i) => (
           <motion.div
             key={i}
-            className="relative group rounded-xl sm:rounded-2xl p-[2px] sm:p-1 mx-1 sm:mx-0 bg-gradient-to-tr from-cyan-500/40 via-transparent to-cyan-500/40 animate-border-spin"
+            className={`relative group rounded-xl sm:rounded-2xl ${cards.length % 2 === 1 && i === cards.length - 1 ? 'sm:col-span-2' : ''} p-[2px] sm:p-1 mx-1 sm:mx-0 bg-gradient-to-tr from-cyan-500/40 via-transparent to-cyan-500/40 animate-border-spin`}
             variants={cardVariant}
             whileHover={{ scale: 1.05 }}
           >

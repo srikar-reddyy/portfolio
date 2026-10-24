@@ -26,6 +26,9 @@ import {
   tripguide,
   threejs,
 } from "../assets";
+import staysyncImg from "../assets/projects/staysync.svg";
+import ragImg from "../assets/projects/rag.svg";
+import crowdImg from "../assets/projects/crowd.svg";
 
 export const navLinks = [
   {
@@ -176,70 +179,57 @@ const testimonials = [
   },
 ];
 
-const projects = [
+const workExperience = [
   {
-    name: "Movie Application",
-    description:
-      "Developed a dynamic movie management platform that allows users to effortlessly organize and showcase their favorite movies, directors, and actors, while fostering a socially interactive and evolving user profile within the movie enthusiast community. Leveraged the flexibility of React to build an intuitive and responsive user interface, delivering a seamless and engaging movie exploration experience across various devices.",
-    tags: [
-      {
-        name: "React",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Firebase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "NodeJS",
-        color: "pink-text-gradient",
-      },
+    title: "Full Stack Engineer",
+    company_name: "StaySync",
+    link: "https://staysync.io",
+    date: "Present",
+    points: [
+      "Full stack engineer at StaySync, building a multi-tenant enterprise hostel management platform serving 2,400+ active users with 99.9% uptime.",
+      "Digitized room allocation, outpasses and attendance workflows end to end.",
+      "Optimized MongoDB queries by 40%, improving dashboard and API response times.",
+      "Built with Node.js, TypeScript, Express, React and Zustand using AI-assisted engineering workflows.",
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Pocket News",
-    description:
-      "This web-app gives you a quick glance at today’s top headlines, right on your screen. It’s like carrying the front page of a newspaper in your pocket—fast, easy, and always up to date.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+const projects = [
+  {
+    name: "StaySync",
+    description:
+      "Multi-tenant enterprise hostel platform digitizing allocation, outpasses and attendance for 2,400+ users, with 99.9% uptime and 40% faster MongoDB queries.",
+    tags: [
+      { name: "typescript", color: "blue-text-gradient" },
+      { name: "nodejs", color: "green-text-gradient" },
+      { name: "mongodb", color: "pink-text-gradient" },
+    ],
+    image: staysyncImg,
+    live_link: "https://staysync.io",
+  },
+  {
+    name: "Multi-Doc Reasoning Engine",
+    description:
+      "Full-stack RAG pipeline for querying and reasoning over multiple documents using embeddings and vector search, cutting retrieval latency by 70% with source-citation guardrails and hallucination checks.",
+    tags: [
+      { name: "fastapi", color: "blue-text-gradient" },
+      { name: "langchain", color: "green-text-gradient" },
+      { name: "chromadb", color: "pink-text-gradient" },
+    ],
+    image: ragImg,
+    source_code_link: "https://github.com/srikar-reddyy/rag-document-qa-system",
+  },
+  {
+    name: "Smart Crowd Management",
+    description:
+      "Real-time computer vision pipeline for crowd monitoring, powered by YOLOv8, PyTorch and TensorRT and deployed on AWS EC2.",
+    tags: [
+      { name: "yolov8", color: "blue-text-gradient" },
+      { name: "pytorch", color: "green-text-gradient" },
+      { name: "aws", color: "pink-text-gradient" },
+    ],
+    image: crowdImg,
+  },
+];
+
+export { services, technologies, experiences, workExperience, testimonials, projects };
