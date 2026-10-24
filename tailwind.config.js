@@ -1,44 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
       fontFamily: {
-        generalsans: ['General Sans', 'sans-serif'],
+        sans: ['"General Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       colors: {
-        black: {
-          DEFAULT: '#000',
-          100: '#010103',
-          200: '#0E0E10',
-          300: '#1C1C21',
-          500: '#3A3A49',
-          600: '#1A1A1A',
-        },
-        white: {
-          DEFAULT: '#FFFFFF',
-          800: '#E4E4E6',
-          700: '#D6D9E9',
-          600: '#AFB0B6',
-          500: '#62646C',
-        },
-      },
-      backgroundImage: {
-        terminal: "url('/assets/terminal.png')",
-      },
-      animation: {
-        'spin-slow': 'spin 8s linear infinite',
-        'spin-reverse-slower': 'spin-reverse 12s linear infinite',
-        'fade-in': 'fadeIn 1s ease-in forwards',
-      },
-      keyframes: {
-        'spin-reverse': {
-          from: { transform: 'rotate(360deg)' },
-          to: { transform: 'rotate(0deg)' },
-        },
-        fadeIn: {
-          from: { opacity: 0 },
-          to: { opacity: 1 },
+        ink: '#05070a',
+        surface: '#0c0f14',
+        accent: {
+          DEFAULT: '#22d3ee',
         },
       },
     },

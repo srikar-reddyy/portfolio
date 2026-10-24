@@ -1,54 +1,46 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
-import { styles } from '../styles';
+import Section from './ui/Section';
+import { reveal } from './ui/motion';
 import { workExperience } from '../constants';
-import { fadeIn, textVariant } from '../Utils/motion';
-import { SectionWrapper } from '../hoc';
 
-const Experience = () => (
-  <>
-    <motion.div variants={textVariant()} className="text-center">
-      <p className={styles.sectionSubText}>What I've done so far</p>
-      <h2 className={styles.sectionHeadText}>Experience</h2>
-    </motion.div>
-
-    <div className="mt-12 flex flex-col gap-6 max-w-4xl mx-auto">
-      {workExperience.map((job, index) => (
-        <motion.div
-          key={job.company_name}
-          variants={fadeIn('up', 'spring', index * 0.3, 0.75)}
-          className="rounded-2xl p-[2px] bg-gradient-to-tr from-cyan-500/40 via-transparent to-cyan-500/40"
-        >
-          <div className="bg-neutral-900 rounded-2xl p-6 sm:p-8">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-              <div>
-                <h3 className="text-white text-2xl font-bold">{job.title}</h3>
-                <a
-                  href={job.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-cyan-400 font-semibold hover:underline"
-                >
-                  {job.company_name} <FaExternalLinkAlt className="w-3 h-3" />
-                </a>
+function Experience() {
+  return (
+    <Section id="experience" eyebrow="Career" title="Experience">
+      <ol className="relative border-l border-white/10 ml-2 space-y-8">
+        {workExperience.map((job) => (
+          <motion.li key={job.company} variants={reveal} className="relative pl-8">
+            <span className="absolute -left-[7px] top-2 w-3.5 h-3.5 rounded-full bg-accent ring-4 ring-accent/20" />
+            <div className="card card-hover p-6 sm:p-8">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">{job.title}</h3>
+                  <a
+                    href={job.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-flex items-center gap-2 font-semibold text-accent hover:underline"
+                  >
+                    {job.company} <FaExternalLinkAlt className="w-3 h-3" aria-hidden="true" />
+                  </a>
+                </div>
+                <span className="chip self-start">{job.date}</span>
               </div>
-              <span className="text-neutral-400 text-sm">{job.date}</span>
+              <ul className="mt-5 space-y-3">
+                {job.points.map((point) => (
+                  <li key={point} className="flex gap-3 text-neutral-300 leading-relaxed">
+                    <span className="mt-2.5 w-1.5 h-1.5 shrink-0 rounded-full bg-accent/70" />
+                    {point}
+                  </li>
+                ))}
+              </ul>
             </div>
+          </motion.li>
+        ))}
+      </ol>
+    </Section>
+  );
+}
 
-            <ul className="mt-5 list-disc ml-5 space-y-2">
-              {job.points.map((point, i) => (
-                <li key={i} className="text-neutral-300 text-[15px] leading-relaxed">
-                  {point}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </motion.div>
-      ))}
-    </div>
-  </>
-);
-
-export default SectionWrapper(Experience, 'experience');
+export default Experience;

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page not found | Srikar Reddy</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,600,700&display=swap" />
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0; min-height: 100svh; display: grid; place-items: center; padding: 24px;
+        background: radial-gradient(circle at 80% 0%, rgba(34,211,238,.15), transparent 50%), #05070a;
+        color: #fff; font-family: 'General Sans', system-ui, sans-serif; text-align: center;
+      }
+      .code { font-size: clamp(5rem, 20vw, 9rem); font-weight: 700; line-height: 1; letter-spacing: -0.04em;
+        background: linear-gradient(90deg, #22d3ee, #7dd3fc); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: #22d3ee; font-size: 14px; }
+      p { color: #a3a3a3; max-width: 28rem; margin: 16px auto 32px; line-height: 1.6; }
+      a { display: inline-block; padding: 12px 24px; border-radius: 12px; background: #22d3ee; color: #05070a;
+        font-weight: 600; text-decoration: none; transition: transform .2s; }
+      a:hover { transform: translateY(-2px); }
+      a:focus-visible { outline: 2px solid #22d3ee; outline-offset: 4px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="mono">GET <span id="path">/</span> → 404</div>
+      <div class="code">404</div>
+      <p>This route doesn't exist. Maybe it was refactored away.</p>
+      <a href="/">Back to the portfolio</a>
+    </main>
+    <script>document.getElementById('path').textContent = location.pathname;</script>
+  </body>
+</html>

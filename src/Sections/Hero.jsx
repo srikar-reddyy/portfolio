@@ -1,87 +1,105 @@
-import React from 'react';
+import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaArrowRight, FaMapMarkerAlt } from 'react-icons/fa';
 
-const socials = [
-  { icon: FaGithub, label: 'GitHub', href: 'https://github.com/srikar-reddyy' },
-  { icon: FaLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/srikar-reddy-81577b263/' },
-  { icon: FaEnvelope, label: 'Email', href: 'mailto:srikarsrikar303@gmail.com' },
-];
+import Socials from '../Components/ui/Socials';
+import { heroStats, profile } from '../constants';
+
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] },
+});
 
 function Hero() {
   return (
-    <section className="relative min-h-screen w-full bg-black text-white flex flex-col-reverse sm:flex-row items-center justify-center px-4 sm:px-20 pt-24 sm:pt-12 overflow-hidden">
-      {/* Left Text */}
-      <div className="z-10 mt-10 sm:mt-0 sm:mr-12 max-w-2xl text-center sm:text-left">
-        <h1 className="text-4xl sm:text-6xl font-bold leading-tight">
-          Hi, <br />
-          <span>I'm Srikar</span> <span className="waving-hand">👋</span>
-        </h1>
+    <section id="about" className="relative min-h-[100svh] flex items-center pt-28 pb-16 overflow-hidden">
+      {/* Single soft glow — kept subtle on purpose */}
+      <div className="pointer-events-none absolute -top-40 right-0 w-[520px] h-[520px] rounded-full bg-accent/10 blur-[140px]" />
 
-        <h2 className="text-2xl sm:text-3xl font-semibold mt-4">
-          I am{' '}
-          <span style={{ color: '#00FFFF', fontWeight: 'bold' }}>
-            <Typewriter
-              words={['a Backend Engineer', 'an AI Engineer', 'a Full Stack Developer', 'a RAG Pipeline Builder']}
-              loop={true}
-              cursor
-              cursorStyle="|"
-              typeSpeed={110}
-              deleteSpeed={90}
-              delaySpeed={1000}
-            />
-          </span>
-        </h2>
+      <div className="container-page relative w-full grid gap-12 lg:grid-cols-[1.25fr_1fr] items-center">
+        {/* Text */}
+        <div className="order-2 lg:order-1 text-center lg:text-left">
+          <motion.p {...fadeUp(0)} className="chip gap-2">
+            <FaMapMarkerAlt className="text-accent" /> {profile.location}
+          </motion.p>
 
-        <p className="text-lg sm:text-xl text-neutral-400 mt-4">
-          Backend & AI Engineer based in Hyderabad, India 📍 I build scalable full-stack applications, production RAG pipelines, and intelligent AI-powered systems. Full Stack Engineer at StaySync, serving 2,400+ active users with 99.9% uptime 🚀
-        </p>
+          <motion.h1
+            {...fadeUp(0.08)}
+            className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]"
+          >
+            Hi, I&apos;m Srikar.
+            <span className="block mt-2 bg-gradient-to-r from-accent to-sky-300 bg-clip-text text-transparent">
+              {profile.headline}
+            </span>
+          </motion.h1>
 
-        {/* Resume Button */}
-        <div className="mt-8 flex flex-wrap items-center gap-5 justify-center sm:justify-start">
-  <a
-    href="https://drive.google.com/file/d/1q1pOFgrvK8iflwMWjGlFZzf38fuvRPlD/view?usp=drivesdk"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="relative inline-block px-6 py-3 rounded-xl font-semibold text-white bg-black border-2 border-cyan-400
-               transition-all duration-300 hover:scale-105 hover:shadow-[0_0_0px_#22d3ee,0_0_0px_#22d3ee] group"
-  >
-    <span className="relative z-10">View Resume</span>
+          <motion.p {...fadeUp(0.16)} className="mt-6 text-lg sm:text-xl text-neutral-300">
+            I build{' '}
+            <span className="font-semibold text-white">
+              <Typewriter
+                words={['scalable backends.', 'production RAG pipelines.', 'AI-powered products.']}
+                loop
+                cursor
+                cursorStyle="|"
+                typeSpeed={70}
+                deleteSpeed={45}
+                delaySpeed={1600}
+              />
+            </span>
+          </motion.p>
 
-    {/* Glow layer */}
-    <span className="absolute inset-0 rounded-xl bg-cyan-400 opacity-20 blur-xl group-hover:opacity-40 transition-all duration-500" />
-  </a>
-  {socials.map(({ icon: Icon, label, href }) => (
-    <a
-      key={label}
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={label}
-      className="text-neutral-300 hover:text-cyan-400 transition-colors text-2xl"
-    >
-      <Icon />
-    </a>
-  ))}
-</div>
+          <motion.p
+            {...fadeUp(0.22)}
+            className="mt-4 max-w-xl mx-auto lg:mx-0 text-base sm:text-lg text-neutral-400 leading-relaxed"
+          >
+            Full Stack Engineer at StaySync, where I build a multi-tenant platform with 2,400+ active users. I care
+            about systems that are fast, reliable and easy to reason about.
+          </motion.p>
 
-      </div>
+          <motion.div
+            {...fadeUp(0.3)}
+            className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3"
+          >
+            <a href={profile.resume} target="_blank" rel="noopener noreferrer" className="btn-primary">
+              View Resume <FaArrowRight className="text-sm" />
+            </a>
+            <a href="#contact" className="btn-ghost">
+              Get in touch
+            </a>
+            <Socials className="sm:ml-2" />
+          </motion.div>
 
-      {/* Right Image + Animation */}
-      <div className="relative flex justify-center items-center">
-        <img
-          src="/assets/srikar-headshot.jpg"
-          alt="Srikar Avatar"
-          className="shrink-0 w-48 h-48 sm:w-80 sm:h-80 object-cover object-center bg-white rounded-full border-4 border-cyan-400
-             shadow-[0_0_40px_#00ffff33,0_20px_40px_#00ffff22]
-             transition-all duration-500 ease-in-out
-             hover:shadow-[0_0_10px_#00ffff44,0_30px_60px_#00ffff33]
-             hover:scale-105"
-        />
+          <motion.dl
+            {...fadeUp(0.38)}
+            className="mt-12 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 border-t border-white/10 pt-8"
+          >
+            {heroStats.map(({ value, label }) => (
+              <div key={label}>
+                <dt className="sr-only">{label}</dt>
+                <dd className="text-2xl sm:text-3xl font-bold text-white">{value}</dd>
+                <dd className="mt-1 text-xs sm:text-sm text-neutral-500">{label}</dd>
+              </div>
+            ))}
+          </motion.dl>
+        </div>
 
-        {/* Rotating circles */}
-        <div className="absolute top-1/2 left-1/2 w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] border border-cyan-400/30 rounded-full animate-spin-slow z-[-1] -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute top-1/2 left-1/2 w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] border border-cyan-400/20 rounded-full animate-spin-reverse-slower z-[-2] -translate-x-1/2 -translate-y-1/2" />
+        {/* Photo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.94 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="order-1 lg:order-2 relative mx-auto"
+        >
+          <img
+            src="/assets/srikar-headshot.jpg"
+            alt="Portrait of Srikar Reddy"
+            width="320"
+            height="320"
+            className="relative w-52 h-52 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full object-cover bg-white
+                       ring-4 ring-accent/80 shadow-[0_0_60px_-10px_rgba(34,211,238,0.45)]"
+          />
+        </motion.div>
       </div>
     </section>
   );

@@ -1,14 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-
-const links = ['About', 'Skills', 'Experience', 'Projects', 'Education', 'Contact'];
-
-const socials = [
-  { icon: FaGithub, label: 'GitHub', href: 'https://github.com/srikar-reddyy' },
-  { icon: FaLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/srikar-reddy-81577b263/' },
-  { icon: FaEnvelope, label: 'Email', href: 'mailto:srikarsrikar303@gmail.com' },
-];
+import Socials from '../Components/ui/Socials';
+import { navLinks as links, profile } from '../constants';
 
 const overlayVariants = {
   closed: { opacity: 0, y: -16 },
@@ -52,17 +45,17 @@ function Navbar() {
     <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        isOpen ? 'bg-transparent border-b border-transparent' : 'bg-black/80 backdrop-blur-md border-b border-white/10'
+        isOpen ? 'bg-transparent border-b border-transparent' : 'bg-ink/75 backdrop-blur-md border-b border-white/10'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="container-page">
         <div className="flex justify-between items-center py-4">
           <a
             href="#about"
             onClick={close}
-            className="text-white font-bold text-xl hover:text-cyan-400 transition-colors ml-2 sm:ml-6"
+            className="text-white font-bold text-xl hover:text-accent transition-colors"
           >
-            Srikar Reddy
+            {profile.name}
           </a>
 
           {/* Desktop nav */}
@@ -72,8 +65,8 @@ function Navbar() {
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase()}`}
-                    className="relative py-2 px-1 text-base font-medium text-neutral-200 hover:text-cyan-400 transition-colors
-                               after:absolute after:left-0 after:-bottom-0.5 after:h-0.5 after:w-0 after:bg-cyan-400
+                    className="relative py-2 px-1 text-base font-medium text-neutral-300 hover:text-white transition-colors
+                               after:absolute after:left-0 after:-bottom-0.5 after:h-0.5 after:w-0 after:bg-accent
                                after:transition-all after:duration-300 hover:after:w-full"
                   >
                     {item}
@@ -115,7 +108,7 @@ function Navbar() {
         {isOpen && (
           <motion.nav
             key="mobile-menu"
-            className="sm:hidden fixed inset-0 z-40 h-[100dvh] bg-[#050608] flex flex-col"
+            className="sm:hidden fixed inset-0 z-40 h-[100dvh] bg-ink flex flex-col"
             variants={overlayVariants}
             initial="closed"
             animate="open"
@@ -132,10 +125,10 @@ function Navbar() {
                     href={`#${item.toLowerCase()}`}
                     onClick={(e) => goTo(e, item.toLowerCase())}
                     className="group flex items-center justify-between w-full py-3 border-b border-white/10 text-3xl font-bold text-white
-                               hover:text-cyan-400 active:text-cyan-400 transition-colors"
+                               hover:text-accent active:text-accent transition-colors"
                   >
                     <span>{item}</span>
-                    <span className="text-sm font-medium text-neutral-500 group-hover:text-cyan-400 transition-colors">
+                    <span className="text-sm font-medium text-neutral-500 group-hover:text-accent transition-colors">
                       0{index + 1}
                     </span>
                   </a>
@@ -143,19 +136,8 @@ function Navbar() {
               ))}
             </ul>
 
-            <motion.div variants={itemVariants} className="relative flex justify-center gap-8 pb-12">
-              {socials.map(({ icon: Icon, label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="text-neutral-300 hover:text-cyan-400 transition-colors text-2xl"
-                >
-                  <Icon />
-                </a>
-              ))}
+            <motion.div variants={itemVariants} className="relative flex justify-center pb-12">
+              <Socials size="text-2xl" />
             </motion.div>
           </motion.nav>
         )}

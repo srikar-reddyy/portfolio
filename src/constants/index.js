@@ -1,235 +1,135 @@
-import {
-  mobile,
-  backend,
-  creator,
-  web,
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  vnrvjietlogo,
-  shopify,
-  carrent,
-  jobit,
-  Nanologo,
-  tripguide,
-  threejs,
-} from "../assets";
-import staysyncImg from "../assets/projects/staysync.svg";
-import ragImg from "../assets/projects/rag.svg";
-import crowdImg from "../assets/projects/crowd.svg";
+import staysyncImg from '../assets/projects/staysync.svg';
+import ragImg from '../assets/projects/rag.svg';
+import crowdImg from '../assets/projects/crowd.svg';
+import vnrvjietLogo from '../assets/company/vnrvjietlogo.png';
+import nanoLogo from '../assets/company/Nanologo.png';
 
-export const navLinks = [
-  {
-    id: "about",
-    title: "About",
-  },
-  {
-    id: "work",
-    title: "Work",
-  },
-  {
-    id: "contact",
-    title: "Contact",
-  },
+export const profile = {
+  name: 'Srikar Reddy',
+  headline: 'Full Stack & AI Engineer',
+  location: 'Hyderabad, India',
+  email: 'srikarsrikar303@gmail.com',
+  resume: 'https://drive.google.com/file/d/1q1pOFgrvK8iflwMWjGlFZzf38fuvRPlD/view?usp=drivesdk',
+  github: 'https://github.com/srikar-reddyy',
+  linkedin: 'https://www.linkedin.com/in/srikar-reddy-81577b263/',
+};
+
+export const navLinks = ['About', 'Skills', 'Experience', 'Projects', 'Education', 'Contact'];
+
+export const heroStats = [
+  { value: '2,400+', label: 'Active users served' },
+  { value: '99.9%', label: 'Production uptime' },
+  { value: '70%', label: 'Faster RAG retrieval' },
 ];
 
-const services = [
+export const workExperience = [
   {
-    title: "Web Developer",
-    icon: web,
-  },
-  {
-    title: "React Native Developer",
-    icon: mobile,
-  },
-  {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
-  },
-];
-
-const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
-  },
-];
-
-const experiences = [
-  {
-    title: "VNR VJIET",
-    company_name: "Bachelor of Technology : Artificial Intelligence and Data Science",
-    icon: vnrvjietlogo,//should change
-    iconBg: "white",
-    date: "September 2023 - June 2027",
+    title: 'Full Stack Engineer',
+    company: 'StaySync',
+    link: 'https://staysync.io',
+    date: 'Present',
     points: [
-      "Throughout my college journey, I have proactively built a strong foundation in core computer science subjects. I began by mastering Data Structures and Algorithms (DSA), which helped sharpen my problem-solving and coding skills. Following this, I delved into Operating Systems and Design and Analysis of Algorithms (DAA), gaining a solid understanding of system-level concepts and algorithmic efficiency. Since my second year, I have consistently pursued advanced topics and hands-on learning to deepen my technical expertise.",
-    ],
-  },
-  {
-    title: "Nano Junior college",
-    company_name: "Intermediate",
-    icon: Nanologo,
-    iconBg: "#E6DEDD",
-    date: "January 2021 - May 2023",
-    points: [
-      "I completed my intermediate education from Nano Junior College under the TSBIE curriculum with an aggregate of 90%. Alongside, I prepared for JEE Mains and secured a percentile of 89, reflecting my strong foundation in Physics, Chemistry, and Mathematics.",
-    ],
-  },
-  {
-    title: "VRS & VJRS",
-    company_name: "Central Board of Secondary Education",
-    icon: vnrvjietlogo,
-    iconBg: "white",
-    date: "June 2018 - June 2021",
-    points: [
-      "I completed my Class 10 education under the CBSE curriculum at VRS & VJRS with a CGPA of 8.0 (80%).",
+      'Build and ship StaySync, a multi-tenant hostel management platform serving 2,400+ active users at 99.9% uptime.',
+      'Digitized room allocation, outpasses and attendance end to end, replacing manual workflows.',
+      'Optimized MongoDB queries by 40%, speeding up dashboards and APIs.',
+      'Stack: Node.js, TypeScript, Express, React, Zustand and MongoDB, built with AI-assisted engineering workflows.',
     ],
   },
 ];
 
-const testimonials = [
+export const projects = [
   {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-  },
-];
-
-const workExperience = [
-  {
-    title: "Full Stack Engineer",
-    company_name: "StaySync",
-    link: "https://staysync.io",
-    date: "Present",
-    points: [
-      "Full stack engineer at StaySync, building a multi-tenant enterprise hostel management platform serving 2,400+ active users with 99.9% uptime.",
-      "Digitized room allocation, outpasses and attendance workflows end to end.",
-      "Optimized MongoDB queries by 40%, improving dashboard and API response times.",
-      "Built with Node.js, TypeScript, Express, React and Zustand using AI-assisted engineering workflows.",
-    ],
-  },
-];
-
-const projects = [
-  {
-    name: "StaySync",
-    description:
-      "Multi-tenant enterprise hostel platform digitizing allocation, outpasses and attendance for 2,400+ users, with 99.9% uptime and 40% faster MongoDB queries.",
-    tags: [
-      { name: "typescript", color: "blue-text-gradient" },
-      { name: "nodejs", color: "green-text-gradient" },
-      { name: "mongodb", color: "pink-text-gradient" },
-    ],
+    name: 'StaySync',
+    summary:
+      'Multi-tenant hostel management platform digitizing allocation, outpasses and attendance for 2,400+ users.',
     image: staysyncImg,
-    live_link: "https://staysync.io",
+    tags: ['TypeScript', 'Node.js', 'Express', 'React', 'MongoDB'],
+    metrics: ['2,400+ users', '99.9% uptime', '40% faster queries'],
+    live: 'https://staysync.io',
+    caseStudy: {
+      problem:
+        'Hostels handled room allocation, outpass approvals and attendance manually, which is slow to run and hard to audit at scale.',
+      role:
+        'Full stack engineer across the backend services, APIs and React dashboards.',
+      architecture: [
+        'Multi-tenant Node.js + Express + TypeScript backend on MongoDB',
+        'React dashboards with Zustand for state management',
+        'Workflows for allocation, outpasses and attendance on a shared core',
+      ],
+      impact: [
+        'Serving 2,400+ active users in production',
+        '99.9% uptime',
+        '40% faster MongoDB queries after optimization',
+      ],
+    },
   },
   {
-    name: "Multi-Doc Reasoning Engine",
-    description:
-      "Full-stack RAG pipeline for querying and reasoning over multiple documents using embeddings and vector search, cutting retrieval latency by 70% with source-citation guardrails and hallucination checks.",
-    tags: [
-      { name: "fastapi", color: "blue-text-gradient" },
-      { name: "langchain", color: "green-text-gradient" },
-      { name: "chromadb", color: "pink-text-gradient" },
-    ],
+    name: 'Multi-Doc Reasoning Engine',
+    summary:
+      'Full-stack RAG pipeline for querying and reasoning across many documents, with source citations and hallucination checks.',
     image: ragImg,
-    source_code_link: "https://github.com/srikar-reddyy/rag-document-qa-system",
+    tags: ['Python', 'FastAPI', 'LangChain', 'ChromaDB', 'React'],
+    metrics: ['70% lower retrieval latency', 'Cited answers'],
+    source: 'https://github.com/srikar-reddyy/rag-document-qa-system',
+    caseStudy: {
+      problem:
+        'Answering questions across a large set of PDFs needs grounded, verifiable answers. A plain LLM call hallucinates and cannot cite its sources.',
+      role: 'Designed and built the full pipeline, from ingestion and the FastAPI backend to the React frontend.',
+      architecture: [
+        'PDF ingestion with PyPDF, chunked and embedded with Sentence Transformers',
+        'ChromaDB vector store for semantic retrieval',
+        'LangChain orchestration with an LLM for grounded generation',
+        'Modular FastAPI backend (routes, services, pipelines) with a React (Vite) UI',
+      ],
+      impact: [
+        'Retrieval latency cut by 70%',
+        'Strict source-citation guardrails and hallucination checks on every answer',
+      ],
+    },
   },
   {
-    name: "Smart Crowd Management",
-    description:
-      "Real-time computer vision pipeline for crowd monitoring, powered by YOLOv8, PyTorch and TensorRT and deployed on AWS EC2.",
-    tags: [
-      { name: "yolov8", color: "blue-text-gradient" },
-      { name: "pytorch", color: "green-text-gradient" },
-      { name: "aws", color: "pink-text-gradient" },
-    ],
+    name: 'Smart Crowd Management',
+    summary:
+      'Real-time computer vision pipeline that detects people and flags dense zones from live camera feeds.',
     image: crowdImg,
+    tags: ['Python', 'YOLOv8', 'PyTorch', 'TensorRT', 'AWS EC2'],
+    metrics: ['Real-time detection', 'GPU-optimized'],
+    caseStudy: {
+      problem:
+        'Crowded venues need early warning when areas become dangerously dense, and that has to happen live rather than from recorded footage.',
+      role: 'Built the detection pipeline and its deployment.',
+      architecture: [
+        'YOLOv8 person detection built on PyTorch',
+        'TensorRT optimization for real-time GPU inference',
+        'Deployed on AWS EC2',
+      ],
+      impact: ['Real-time people counting and crowd-density monitoring'],
+    },
   },
 ];
 
-export { services, technologies, experiences, workExperience, testimonials, projects };
+export const education = [
+  {
+    school: 'VNR Vignana Jyothi Institute of Engineering & Technology',
+    degree: 'B.Tech, Artificial Intelligence & Data Science',
+    date: '2023 – 2027',
+    logo: vnrvjietLogo,
+    points: [
+      'Core CS foundation: Data Structures & Algorithms, Operating Systems, Design & Analysis of Algorithms',
+      'Building production software alongside coursework since second year',
+    ],
+  },
+  {
+    school: 'Nano Junior College',
+    degree: 'Intermediate (TSBIE), MPC',
+    date: '2021 – 2023',
+    logo: nanoLogo,
+    points: ['Scored 90% aggregate', 'JEE Main: 89th percentile'],
+  },
+  {
+    school: 'VRS & VJRS',
+    degree: 'Class X (CBSE)',
+    date: '2018 – 2021',
+    points: ['CGPA 8.0'],
+  },
+];
